@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends MX_Controller {
+class Registrasi extends MX_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -11,15 +11,14 @@ class Home extends MX_Controller {
 
 	public function index()
 	{
-
 		$data = array(
-			'title' => 'Home | Carikanma',
-			'titleku'=>'Home',
+			'title' => 'Registrasi | Carikanma',
+			'titleku'=>'Registrasi',
 			//'ambil_data' => $this->M_home->tampilData('tb_home'),
 			);
 
 		$this->load->view('element/header_home',$data);
-		$this->load->view('V_home',$data);
+		$this->load->view('V_registrasi',$data);
 		$this->load->view('element/footer_home');
 	}
 

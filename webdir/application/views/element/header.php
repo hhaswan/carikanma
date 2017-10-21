@@ -9,9 +9,9 @@
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -266,8 +266,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url();?>proxmox/add"><i class="fa fa-circle-o"></i>  Lihat Produk</a></li>
-            <li><a href="<?php echo base_url();?>proxmox/add"><i class="fa fa-circle-o"></i>  Lihat Produk Test</a></li>
+            <li><a href="<?php echo base_url();?>adm/produk"><i class="fa fa-circle-o"></i>Lihat Produk</a></li>
+            <li><a href="<?php echo base_url();?>adm/produk/add"><i class="fa fa-circle-o"></i>Tambah Produk</a></li>
           </ul>
         </li>
 
@@ -298,6 +298,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Reset Password</a></li>
           </ul>
         </li>
+        <li ><a href="<?php echo base_url();?>statistik"><i class="fa fa-bar-chart"></i> <span>Statistik</span></a></li>
         <li class="header">Action</li>
         <li><a href="<?php echo base_url() ?>home"><i class="fa fa-circle-o text-blue"></i> <span>Go to Homepage</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Log Out</span></a></li>
@@ -320,3 +321,7 @@
         <li class="active">Halohaaa I'm here</li>
       </ol>
     </section>
+
+    <section class="content">
+   <div class="row">
+             <div class="col-xs-12">

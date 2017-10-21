@@ -1,19 +1,27 @@
 <!-- penutup tag div, startnya ada di header.php -->
 </div>
+</div>
+</div>
+</section>
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
 <script src="<?php echo base_url();?>assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
 $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+
+<!-- DataTables -->
+<script src="<?php echo base_url();?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url();?>assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+
 <!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="<?php echo base_url();?>assets/js/raphael-min.js"></script>
 <script src="<?php echo base_url();?>assets/plugins/morris/morris.min.js"></script>
 <!-- Sparkline -->
 <script src="<?php echo base_url();?>assets/plugins/sparkline/jquery.sparkline.min.js"></script>
@@ -23,7 +31,8 @@ $.widget.bridge('uibutton', $.ui.button);
 <!-- jQuery Knob Chart -->
 <script src="<?php echo base_url();?>assets/plugins/knob/jquery.knob.js"></script>
 <!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<!-- moment 2.11.2 -->
+<script src="<?php echo base_url();?>assets/js/moment.min.js"></script>
 <script src="<?php echo base_url();?>assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
 <script src="<?php echo base_url();?>assets/plugins/datepicker/bootstrap-datepicker.js"></script>
@@ -36,19 +45,18 @@ $.widget.bridge('uibutton', $.ui.button);
 <!-- AdminLTE App -->
 <script src="<?php echo base_url();?>assets/js/app.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url();?>assets/js/pages/dashboard.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/js/pages/dashboard.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>assets/js/demo.js"></script>
 <!-- /.content-wrapper -->
 
-<!-- DataTables -->
-<script src="<?php echo base_url();?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
-
 <!-- page script -->
 <script>
   $(function () {
-    $("#example1").DataTable();
+    $("#example1").DataTable({
+      "scrollY": 200,
+      "scrollX": true
+    });
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,

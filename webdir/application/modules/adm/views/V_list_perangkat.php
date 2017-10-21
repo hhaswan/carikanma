@@ -21,15 +21,15 @@
                         $no = 1;
                         foreach ($ambil_data as $row) {
                           //perangkat_data adalah nama kolom dari database
-                        $datas = json_decode($row->perangkat_data,true);
+                        //$datas = json_decode($row->perangkat_data,true);
                         //foreach($datas as $datum){
                            // echo $datum['name_r'];
                       ?>
                         <tr>
                           <td><?php echo $no++ ;?></td>
-                          <td><?php echo $datas['jenis_perangkat']; ?></td>
-                          <td><?php echo $datas['typety_perangkat'].' '.$datas['type_perangkat'];?></td>
-                          <td><?php echo $datas['ip_perangkat'];?></td>
+                          <td><?php echo $row['nama_produk']; ?></td>
+                          <td><?php echo $row['deskripsi'];?></td>
+                          <td><?php echo $row['foto_produk'];?></td>
                           <td><a href="<?php echo base_url('perangkat/detil/'.$row->perangkat_id) ?>" class="fa fa-eye"></a>&nbsp;<a href="<?php echo base_url('perangkat/hapus/').$row->perangkat_id ?>" onclick="return confirm('Anda yakin akan menghapus data?')" class="fa fa-remove"></a>&nbsp;<a href="<?php echo base_url('perangkat/edit/'.$row->perangkat_id) ?>" class="fa fa-edit"></a></td>
                         </tr>
                        <?php
