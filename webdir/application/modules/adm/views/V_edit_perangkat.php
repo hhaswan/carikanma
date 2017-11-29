@@ -12,7 +12,7 @@
 											<?php
                         //$no = 1;
                         foreach ($edit_data as $row) {
-                          //perangkat_data adalah nama tabel dari database
+                        //perangkat_data adalah nama tabel dari database
                         $datas = json_decode($row->perangkat_data,true);
 
                       ?>

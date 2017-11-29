@@ -1,169 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Carikanma!</title>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobInn-Job Directory</title>
+<!--CUSTOM CSS-->
+<link href="<?php echo base_url();?>assets/css/custom.css" rel="stylesheet" type="text/css">
+<!--BOOTSTRAP CSS-->
+<link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+<!--COLOR CSS-->
+<link href="<?php echo base_url();?>assets/css/color.css" rel="stylesheet" type="text/css">
+<!--RESPONSIVE CSS-->
+<link href="<?php echo base_url();?>assets/css/responsive.css" rel="stylesheet" type="text/css">
+<!--OWL CAROUSEL CSS-->
+<link href="<?php echo base_url();?>assets/css/owl.carousel.css" rel="stylesheet" type="text/css">
+<!--FONTAWESOME CSS-->
+<link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!--TEXT EDITOR CSS-->
+<!-- <link href="<?php echo base_url();?>assets/css/editor.css" type="text/css" rel="stylesheet"/> -->
+<!--SCROLL FOR SIDEBAR NAVIGATION-->
+<link href="<?php echo base_url();?>assets/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+<!--FAVICON ICON-->
+<link rel="icon" href="<?php echo base_url();?>assets/<?php echo base_url();?>assets/<?php echo base_url();?>assets/images/favicon.ico" type="image/x-icon">
+<!--GOOGLE FONTS-->
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,700,900' rel='stylesheet' type='text/css'>
+<!--[if lt IE 9]>
 
-    <!-- Bootstrap -->
-    <link href="<?php echo base_url();?>assets-home/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets-home/css/bootstrap.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
     <![endif]-->
+</head>
 
-    <style type="text/css">
-   @font-face {
-         font-family: "Sugarpunch DEMO";
-         src: url('<?php echo base_url();?>assets-home/fonts/SugarpunchDEMO.otf');
-         }
+<body class="theme-style-1">
 
-   .fontsugar {
-         font-family: "Sugarpunch DEMO";
-         }
-</style>
+<!--WRAPPER START-->
 
-  </head>
-  <body>
-<div class="container">
-		<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<div class="panel panel-info" >
-								<div class="panel-heading">
-										<div class="panel-title">Login</div>
-										<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Lupa password?</a></div>
-								</div>
+<div id="wrapper">
 
-								<div style="padding-top:30px" class="panel-body" >
 
-										<div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+  <!--INNER BANNER START-->
 
-										<form id="loginform" class="form-horizontal" role="form">
+  <section id="inner-banner">
 
-												<div style="margin-bottom: 25px" class="input-group">
-																		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-																		<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
-																</div>
+    <div class="container">
 
-												<div style="margin-bottom: 25px" class="input-group">
-																		<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-																		<input id="login-password" type="password" class="form-control" name="password" placeholder="password">
-																</div>
+      <h1>Login to Carikanma!</h1>
+
+    </div>
+
+  </section>
+
+  <!--INNER BANNER END-->
 
 
 
-												<div class="input-group">
-																	<div class="checkbox">
-																		<label>
-																			<input id="login-remember" type="checkbox" name="remember" value="1"> Ingat saya
-																		</label>
-																	</div>
-																</div>
+  <!--MAIN START-->
 
-
-														<div style="margin-top:10px" class="form-group">
-																<!-- Button -->
-
-																<div class="col-sm-12 controls">
-																	<a id="btn-login" href="#" class="btn btn-success">Login  </a>
-																	<a id="btn-fblogin" href="#" class="btn btn-primary">Login dengan Facebook</a>
-
-																</div>
-														</div>
-
-
-														<div class="form-group">
-																<div class="col-md-12 control">
-																		<div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-																				Belum mempunyai akun?
-																		<a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-																				Registrasi disini
-																		</a>
-																		</div>
-																</div>
-														</div>
-												</form>
+  <div id="main">
 
 
 
-										</div>
-								</div>
-		</div>
-		<div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-								<div class="panel panel-info">
-										<div class="panel-heading">
-												<div class="panel-title">Registrasi</div>
-												<div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Login disini</a></div>
-										</div>
-										<div class="panel-body" >
-												<form id="signupform" class="form-horizontal" role="form">
+    <!--SIGNUP SECTION START-->
 
-														<div id="signupalert" style="display:none" class="alert alert-danger">
-																<p>Error:</p>
-																<span></span>
-														</div>
+    <section class="signup-section">
 
+      <div class="container">
 
+        <div class="holder">
 
-														<div class="form-group">
-																<label for="email" class="col-md-3 control-label">Email</label>
-																<div class="col-md-9">
-																		<input type="text" class="form-control" name="email" placeholder="Email Address">
-																</div>
-														</div>
+          <div class="thumb"><img src="<?php echo base_url();?>assets/images/signup.png" alt="img"></div>
 
-														<div class="form-group">
-																<label for="firstname" class="col-md-3 control-label">First Name</label>
-																<div class="col-md-9">
-																		<input type="text" class="form-control" name="firstname" placeholder="First Name">
-																</div>
-														</div>
-														<div class="form-group">
-																<label for="lastname" class="col-md-3 control-label">Last Name</label>
-																<div class="col-md-9">
-																		<input type="text" class="form-control" name="lastname" placeholder="Last Name">
-																</div>
-														</div>
-														<div class="form-group">
-																<label for="password" class="col-md-3 control-label">Password</label>
-																<div class="col-md-9">
-																		<input type="password" class="form-control" name="passwd" placeholder="Password">
-																</div>
-														</div>
+          <form action="#">
 
-														<div class="form-group">
-																<label for="icode" class="col-md-3 control-label">Invitation Code</label>
-																<div class="col-md-9">
-																		<input type="text" class="form-control" name="icode" placeholder="">
-																</div>
-														</div>
+            <div class="input-box"> <i class="fa fa-user"></i>
 
-														<div class="form-group">
-																<!-- Button -->
-																<div class="col-md-offset-3 col-md-9">
-																		<button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i>Registrasi</button>
-																		<span style="margin-left:8px;">or</span>
-																</div>
-														</div>
+              <input type="text" placeholder="Username">
 
-														<div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+            </div>
 
-																<div class="col-md-offset-3 col-md-9">
-																		<button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Registrasi dengan Facebook</button>
-																</div>
+            <div class="input-box"> <i class="fa fa-unlock"></i>
 
-														</div>
+              <input type="text" placeholder="Password">
 
+            </div>
 
+            <div class="check-box">
 
-												</form>
-										 </div>
-								</div>
-		 </div>
-</div>
+              <input id="id3" type="checkbox" />
+
+              <strong>Remember Me</strong> </div>
+
+            <input type="submit" value="Sign up">
+
+            <a href="#" class="login">Forgot your Password</a> <b>OR</b>
+
+            <div class="login-social">
+
+              <h4>Log in with Your Social Account</h4>
+
+              <ul>
+
+                <li> <a href="#" class="fb"><i class="fa fa-facebook"></i>Facebook Login</a> </li>
+
+                <li> <a href="#" class="gp"><i class="fa fa-google-plus"></i>Google Plus Login</a> </li>
+
+                <li> <a href="#" class="tw"><i class="fa fa-twitter"></i>Twitter Login</a> </li>
+              </ul>
+              <em>You Don’t have an Account? <a href="<?php echo base_url();?>register">SIGN UP NOW</a></em> </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--SIGNUP SECTION END-->
+  </div>
+  <!--MAIN END-->

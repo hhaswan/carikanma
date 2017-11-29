@@ -15,6 +15,7 @@ class Adm extends MX_Controller {
 		$data = array(
 			'title' => 'Dashboard | Carikanma',
 			'titleku'=>'Dashboard',
+			'active_dash'=>'active',
 			//'ambil_data' => $this->M_perangkat->tampilData('tb_perangkat'),
 			);
 

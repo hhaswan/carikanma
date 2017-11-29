@@ -55,3 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 //custom routing
 $route['halo'] = 'error';
+//custom routing libraries My_Upload
+$route['upload/do_upload'] = 'upload/do_upload';
+$route['upload/(:any)'] = 'upload/view/$1';
+$route['upload'] = 'upload';

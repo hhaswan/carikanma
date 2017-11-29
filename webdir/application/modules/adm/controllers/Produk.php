@@ -14,6 +14,7 @@ class Produk	extends MX_Controller {
 		$data = array(
 			'title' => 'Produk | Carikanma',
 			'titleku'=>'Produk',
+			'active_liproduk'=>'active',
 			'ambil_data' => $this->M_adm->tampilData('produk'),
 			);
 
@@ -40,10 +41,10 @@ class Produk	extends MX_Controller {
 
 	public function add()
 	{
-
 		$data = array(
 			'title' => 'Tambah Produk | Carikanma',
 			'titleku'=>'Tambah Produk',
+			'active_taproduk'=>'active',
 		);
 
 		$this->load->view('element/header',$data);
@@ -57,15 +58,62 @@ class Produk	extends MX_Controller {
 				'nama_produk' => $this->input->post('nm_produk') ,
 				'deskripsi' => $this->input->post('desc_produk'),
 				'foto_produk' => $this->input->post('desc_produk'),
-				'id_umkm_produk' => 'null',
+				//'id_umkm_produk' => 'null',
 			);
 
 		//masukkan ke database
 		$this->M_adm->tambahData('produk',$data);
-		redirect('adm/produk');
+			redirect('adm/produk');
+
 	}
 
-	public function edit($id = null)
+
+public function add_produk_def (){
+
+//$this->load->library('upload');
+	$nmfile = "file_".time(); //nama file + fungsi time
+	$config['upload_path'] = './uploads/'; //Folder untuk menyimpan hasil upload
+	$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+	$config['max_size'] = '3072'; //maksimum besar file 3M
+	$config['max_width']  = '5000'; //lebar maksimum 5000 px
+	$config['max_height']  = '5000'; //tinggi maksimu 5000 px
+	$config['file_name'] = $nmfile; //nama yang terupload nantinya
+ $this->upload->initialize($config);
+	//file_melap nama input tipe nya. jika nama file nya....
+ if($_FILES['foto_produk']['name'])
+ {
+		 if ($this->upload->do_upload('foto_produk'))
+		 {
+				 $gbr = $this->upload->data();
+//BATAS SUCI
+				 /*data yang mau dimasukkan ke dalam bentuk json
+				$this->input->post(nama input type) sedangkan
+				ip0_melapor pengenal yg masuk ke database
+				*/
+				$data = array(
+					'nama_produk' => $this->input->post('nm_produk') ,
+					'deskripsi' => $this->input->post('desc_produk'),
+					'foto_produk' =>$gbr['file_name'],
+				);
+
+			//masukkan ke database
+			$this->M_adm->tambahData('produk',$data);
+
+//BATAS SUCI BERAKHIR
+				 //pesan yang muncul jika berhasil diupload pada session flashdata
+				 $this->session->set_flashdata("pesan", "<span class=\"label label-success\" id=\"alert\">Tambah produk sukses !</span>");
+				 redirect('adm/produk/add'); //jika berhasil maka akan ditampilkan view upload
+		 }else{
+				 //pesan yang muncul jika terdapat error dimasukkan pada session flashdata
+				 $this->session->set_flashdata("pesan", "<span class=\"label label-danger\" id=\"alert\">Tambah produk gagal !!</span>");
+				 redirect('adm/produk/add'); //jika gagal maka akan ditampilkan form upload
+		 }
+ }
+
+}
+
+
+	public function edit($id= null)
 	{
 		if($id == null){
 			redirect(base_url('error'));
@@ -77,34 +125,22 @@ class Produk	extends MX_Controller {
 			);
 
 		$this->load->view('element/header',$data);
-		$this->load->view('V_edit_perangkat',$data);
+		$this->load->view('V_edit_produk',$data);
 		$this->load->view('element/footer');
 	}
 
-	public function edit_perangkat(){
+	public function edit_produk(){
 
-		$id['perangkat_id'] = $this->input->post('perangkat_id');
+			$id['id_produk'] = $this->input->post('id_produk');
 		$data=array(
-			'jenis_perangkat' => $this->input->post('jenis_pkt') ,
-			'typety_perangkat' => $this->input->post('typety_pkt'),
-			'type_perangkat' => $this->input->post('type_pkt') ,
-			'tport_perangkat' => $this->input->post('tport_pkt') ,
-			'ip_perangkat' => $this->input->post('ip_pkt') ,
-			'port_perangkat' => $this->input->post('port_pkt') ,
-			'user_perangkat' => $this->input->post('user_pkt') ,
-			'pwdty_perangkat' => $this->input->post('pwdty_pkt') ,
-			'pwd_perangkat' => $this->input->post('pwd_pkt') ,
+			'nama_produk' => $this->input->post('nm_produk') ,
+			'deskripsi' => $this->input->post('desc_produk'),
+			'foto_produk' => $this->input->post('desc_produk'),
+			//'id_umkm_produk' => 'null',
 		);
-
-		/*
-		parse to json
-		*/
-		$json_data['perangkat_data']=json_encode($data);
-
 		//masukkan ke database
-		$this->M_adm->updateData('tb_perangkat',$json_data,$id);
-
-		redirect('perangkat');
+		$this->M_adm->updateData('produk',$data,$id);
+		redirect('adm/produk');
 	}
 
 	public function hapus()

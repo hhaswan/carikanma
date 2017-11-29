@@ -8,28 +8,28 @@
         <h3 class="box-title"><?php echo $titleku; ?></h3>
       </div>
       <!-- form start -->
-    <form class="form-horizontal" action="add_produk" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal" action="<?php echo site_url('adm/produk/add_produk_def');?>" method="post" enctype="multipart/form-data">
       <div class="box-body">
         <div class="form-group">
           <label class="control-label col-md-2">Nama Produk</label>
           <div class="col-md-10">
-              <input type="text" class="form-control" name="nm_produk">
+              <input type="text" class="form-control" name="nm_produk" >
           </div>
         </div>
          <div class="form-group">
           <label for="deskripsiproduk" class="control-label col-md-2">Deskripsi Produk</label>
           <div class="col-md-10">
-              <textarea class="form-control" rows="3" name="desc_produk"></textarea>
+              <textarea class="form-control" rows="3" name="desc_produk" ></textarea>
           </div>
           </div>
           <div class="form-group">
             <label for="uploadfoto" class="control-label col-md-2">Upload Foto</label>
             <div class="col-md-10">
-              <input type="file" name="images[]" id="images" multiple>
+              <input type="file" name="foto_produk"  multiple>
           </div>
           </div>
-
                  <button type="submit" class="btn btn-primary col-sm-offset-2">Tambahkan</button>
+                 <div class="col-sm-offset-2"><?php echo $this->session->flashdata("pesan"); ?></div><br>
       </div>
     </form>
     <!-- form end -->

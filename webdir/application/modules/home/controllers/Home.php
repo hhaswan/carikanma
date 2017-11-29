@@ -15,12 +15,12 @@ class Home extends MX_Controller {
 		$data = array(
 			'title' => 'Home | Carikanma',
 			'titleku'=>'Home',
-			//'ambil_data' => $this->M_home->tampilData('tb_home'),
+			'ambil_data' => $this->M_home->tampilData('view_data'),
 			);
 
-		$this->load->view('element/header_home',$data);
+		$this->load->view('element/header',$data);
 		$this->load->view('V_home',$data);
-		$this->load->view('element/footer_home');
+		$this->load->view('element/footer');
 	}
 
 }
